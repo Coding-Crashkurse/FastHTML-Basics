@@ -3,7 +3,10 @@
 ## Files
 
 - **app.py**
-  This file contains a To-Do app developed with FastHTML and SQLAlchemy. It allows users to add, edit, and delete tasks stored in a SQLite database.
+  This file contains a To-Do app developed with FastHTML but without HTMX
+
+  - **htmxapp.py**
+    This file contains a To-Do app developed with FastHTML but WITH HTMX
 
 - **basic.py**
   This file includes basic examples and experiments with FastHTML, demonstrating fundamental concepts and functionalities of the library.

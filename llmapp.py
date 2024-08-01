@@ -9,7 +9,7 @@ app, rt = fast_app()
 
 messages = []
 
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+llm = ChatOpenAI(model="gpt-4o-mini", temperature=0, streaming=True)
 
 headers = [
     Script(src="https://cdn.tailwindcss.com"),
@@ -18,6 +18,7 @@ headers = [
         href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css",
     ),
     Link(rel="icon", href="pirate.png", type="image/png"),
+    Script(src="https://unpkg.com/htmx.org@1.6.1/dist/htmx.min.js"),
 ]
 
 
@@ -49,6 +50,9 @@ def get():
         Button("Send", cls="btn btn-primary w-full mt-2"),
         method="post",
         action="/chat",
+        hx_post="/chat",
+        hx_target="#chat-history-container",
+        hx_swap="innerHTML",
         cls="mt-4",
     )
 
@@ -64,6 +68,7 @@ def get():
         Div(chat_form, cls="w-full max-w-lg mx-auto"),
         Div(
             chat_history,
+            id="chat-history-container",
             cls="mt-4 w-full max-w-lg mx-auto bg-white p-4 shadow-md rounded-lg overflow-y-auto",
         ),
     )
@@ -80,7 +85,7 @@ def chat(user_input: str):
 
         messages.append(AIMessage(content=response.content))
 
-    return RedirectResponse(url="/", status_code=303)
+    return Div(*[ChatMessage(msg) for msg in messages])
 
 
 serve()
