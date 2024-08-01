@@ -5,8 +5,8 @@
 - **app.py**
   This file contains a To-Do app developed with FastHTML but without HTMX
 
-  - **htmxapp.py**
-    This file contains a To-Do app developed with FastHTML but WITH HTMX
+- **htmxapp.py**
+  This file contains a To-Do app developed with FastHTML but WITH HTMX
 
 - **basic.py**
   This file includes basic examples and experiments with FastHTML, demonstrating fundamental concepts and functionalities of the library.
