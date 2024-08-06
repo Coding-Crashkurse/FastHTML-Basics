@@ -1,16 +1,3 @@
-# from fasthtml.common import *
-
-# app = FastHTML()
-
-
-# @app.get("/")
-# def home():
-#     return Div(H1("Hello, World"), P("Some text"), P("Some more text"))
-#     return "<h1>Hello, World</h1>"
-
-
-# serve()
-
 from fasthtml.common import *
 
 app = FastHTML()

@@ -9,7 +9,7 @@ app, rt = fast_app()
 
 messages = []
 
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=0, streaming=True)
+llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 
 headers = [
     Script(src="https://cdn.tailwindcss.com"),

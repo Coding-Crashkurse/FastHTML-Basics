@@ -8,8 +8,8 @@ tasks = []
 @rt("/")
 def get():
     add_task_form = Form(
-        Input(type="text", name="task", placeholder="Neue Aufgabe hinzufügen..."),
-        Button("Hinzufügen"),
+        Input(type="text", name="task", placeholder="Add a new task..."),
+        Button("Add"),
         method="post",
         action="/add-task",
     )
@@ -19,14 +19,14 @@ def get():
             Li(
                 f"{task} ",
                 " ",
-                A("Löschen", href=f"/delete/{i}"),
+                A("Delete", href=f"/delete/{i}"),
             )
             for i, task in enumerate(tasks)
         ],
         id="task-list",
     )
 
-    return Titled("ToDo App", H1("Meine Aufgaben"), add_task_form, task_list)
+    return Titled("ToDo App", H1("My Tasks"), add_task_form, task_list)
 
 
 @rt("/add-task", methods=["post"])
