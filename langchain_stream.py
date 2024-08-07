@@ -95,7 +95,7 @@ async def ws(msg: str, send):
                 hx_swap_oob="beforeend",
             )
         )
-        await asyncio.sleep(0.02)
+        await asyncio.sleep(0.05)
 
 
 serve()

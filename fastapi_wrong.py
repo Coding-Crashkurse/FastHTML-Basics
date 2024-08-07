@@ -38,7 +38,6 @@ async def get():
     )
 
     content = to_xml(Titled("ToDo App", H1("My Tasks"), add_task_form, task_list))
-    print(content)
     return HTMLResponse(content=content)
 
 

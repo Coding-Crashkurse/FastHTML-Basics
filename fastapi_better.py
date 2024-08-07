@@ -7,12 +7,12 @@ app = FastAPI()
 
 @app.get("/route1")
 async def route1():
-    return {"message": "Dies ist Route 1"}
+    return {"message": "This is route 1"}
 
 
 @app.get("/route2")
 async def route2():
-    return {"message": "Dies ist Route 2"}
+    return {"message": "This is route 2"}
 
 
 @app.api_route("/{path:path}", methods=["GET", "POST", "PUT", "DELETE"])
